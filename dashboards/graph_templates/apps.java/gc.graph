@@ -1,0 +1,17 @@
+node = @properties[:node]
+
+title       "Java GC"
+description "Java GC"
+hide_legend false
+
+field :count,  :color => "blue",
+               :alias => "gc count",
+               :data  => "#{node}.gc.CollectionCount",
+               :cacti_style => true
+
+field :time,   :color => "red",
+               :alias => "gc time",
+               :data  => "#{node}.gc.CollectionTime",
+               :second_y_axis => true,
+               :cacti_style => true
+

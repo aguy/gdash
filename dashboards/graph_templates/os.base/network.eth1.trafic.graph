@@ -1,12 +1,14 @@
-title   "Traffic on eth0"
+node = @properties[:node]
+
+title   "Traffic on eth1 (bytes)"
 area    :first
 hide_legend false
 
 field :receiving, :color => "green",
                :alias => "Receiving",
-               :data  => "node.interface.packets.eth0.rx"
+               :data  => "#{node}.interface.eth1.if_octets.rx"
 
 field :transmitting, :color => "blue",
                :alias => "Transmiting",
-               :data  => "node.interface.packets.eth0.tx"
+               :data  => "#{node}.interface.eth1.if_octets.tx"
 

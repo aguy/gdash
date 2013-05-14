@@ -1,0 +1,24 @@
+servers = @properties[:servers]
+node = @properties[:node]
+
+title       "CPU Usage: Average for all CPU"
+vtitle      "percent"
+area        :stacked
+description "The combined CPU usage for #{node} #{servers}"
+hide_legend false
+
+
+field :iowait, :color => "red",
+               :alias => "IO Wait",
+               :data  => "averageSeries(#{node}.cpu.*.cpu.wait)",
+               :cacti_style => true
+
+field :system, :color => "orange",
+               :alias => "System",
+               :data  => "averageSeries(#{node}.cpu.*.cpu.system)",
+               :cacti_style => true
+
+field :user, :color => "yellow",
+             :alias => "User",
+             :data  => "averageSeries(#{node}.cpu.*.cpu.user)",
+             :cacti_style => true

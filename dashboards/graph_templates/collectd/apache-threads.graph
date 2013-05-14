@@ -1,0 +1,27 @@
+node = @properties[:node]
+
+title       "Apache threads"
+area        :stacked
+description "Apache threads for #{node}"
+hide_legend false
+
+field :reading, :color => "red",
+               :alias => "reading",
+               :data  => "#{node}.apache.apache.apache_scoreboard.reading",
+               :cacti_style => true
+
+field :sending, :color => "yellow",
+               :alias => "sending",
+               :data  => "#{node}.apache.apache.apache_scoreboard.sending",
+               :cacti_style => true
+
+field :keepalive, :color => "blue",
+               :alias => "keepalive",
+               :data  => "#{node}.apache.apache.apache_scoreboard.keepalive",
+               :cacti_style => true
+
+field :waiting, :color => "green",
+               :alias => "waiting",
+               :data  => "#{node}.apache.apache.apache_scoreboard.waiting",
+               :cacti_style => true
+

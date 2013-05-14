@@ -1,0 +1,18 @@
+node = @properties[:node]
+
+title       "Swap Usage (in percent)"
+area        :stacked
+description "Swap usage (in percent)"
+hide_legend false
+
+field :use,    :color => "red",
+               :alias => "used",
+               :data  => "asPercent(diffSeries(#{node}.swap.swap.used,#{node}.swap.swap.cached),sumSeries(#{node}.swap.swap.used, #{node}.swap.swap.free))"
+
+field :cached, :color => "yellow",
+               :alias => "cached",
+               :data  => "asPercent(#{node}.swap.swap.cached, sumSeries(#{node}.swap.swap.used, #{node}.swap.swap.free))"
+
+field :free,   :color => "green",
+               :alias => "free",
+               :data  => "asPercent(#{node}.swap.swap.free, sumSeries(#{node}.swap.swap.used, #{node}.swap.swap.free))"

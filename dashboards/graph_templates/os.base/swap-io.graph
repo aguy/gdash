@@ -1,0 +1,14 @@
+node = @properties[:node]
+
+title   "Swap activity"
+area    :first
+hide_legend false
+
+field :receiving, :color => "green",
+               :alias => "swap in",
+               :data  => "#{node}.swap.swap_io.in"
+
+field :transmitting, :color => "blue",
+               :alias => "swap out",
+               :data  => "#{node}.swap.swap_io.out"
+

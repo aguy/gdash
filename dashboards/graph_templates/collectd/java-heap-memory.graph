@@ -1,0 +1,15 @@
+node = @properties[:node]
+
+title       "Java heap memory usage"
+area        :first
+description "Java heap memory usage"
+hide_legend false
+
+field :used,    :color => "blue",
+               :alias => "heap memory used",
+               :data  => "#{node}.heap.HeapMemoryUsage_used"
+
+field :max,    :color => "red",
+               :alias => "heap memory max",
+               :data  => "#{node}.heap.HeapMemoryUsage_max"
+

@@ -1,0 +1,15 @@
+node = @properties[:node]
+
+title       "Java non heap memory usage"
+area        :first
+description "Java non heap memory usage"
+hide_legend false
+
+field :used,    :color => "blue",
+               :alias => "non heap memory used",
+               :data  => "#{node}.heap.NonHeapMemoryUsage_used"
+
+field :max,    :color => "red",
+               :alias => "non heap memory commited",
+               :data  => "#{node}.heap.NonHeapMemoryUsage_committed"
+

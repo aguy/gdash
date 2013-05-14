@@ -1,0 +1,10 @@
+node = @properties[:node]
+
+title       "Memcached hitratio"
+description "Memcached hitratio"
+hide_legend false
+
+field :hitratio,    :color => "red",
+               :alias => "hitratio",
+               :data  => "#{node}.memcached.percent.hitratio"
+

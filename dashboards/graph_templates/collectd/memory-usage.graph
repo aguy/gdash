@@ -1,0 +1,27 @@
+node = @properties[:node]
+
+title       "RAM Usage (in percent)"
+area        :stacked
+description "RAM usage (in percent)"
+hide_legend false
+
+field :use,    :color => "red",
+               :alias => "used by application",
+               :data  => "asPercent(diffSeries(#{node}.memory.memory.used,#{node}.memory.memory.cached,#{node}.memory.memory.buffered),sumSeries(#{node}.memory.memory.used, #{node}.memory.memory.free))"
+/
+
+field :buffer, :color => "orange",
+               :alias => "buffer",
+               :data  => "asPercent(#{node}.memory.memory.buffered,sumSeries(#{node}.memory.memory.used, #{node}.memory.memory.free))"
+/
+
+field :cache,  :color => "yellow",
+               :alias => "cache",
+               :data  => "asPercent(#{node}.memory.memory.cached,sumSeries(#{node}.memory.memory.used, #{node}.memory.memory.free)"
+/
+
+field :free,   :color => "green",
+               :alias => "free",
+               :data  => "asPercent(#{node}.memory.memory.free,sumSeries(#{node}.memory.memory.used, #{node}.memory.memory.free))"
+/
+

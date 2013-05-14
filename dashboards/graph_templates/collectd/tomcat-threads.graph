@@ -1,0 +1,15 @@
+node = @properties[:node]
+
+title       "Tomcat threads"
+area        :first
+description "Tomcat threads"
+hide_legend false
+
+field :busy,    :color => "blue",
+               :alias => "threads busy",
+               :data  => "#{node}.catalina.currentThreadsBusy"
+
+field :count,    :color => "red",
+               :alias => "threads count",
+               :data  => "#{node}.catalina.currentThreadCount"
+

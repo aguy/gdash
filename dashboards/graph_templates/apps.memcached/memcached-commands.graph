@@ -1,0 +1,14 @@
+node = @properties[:node]
+
+title       "Memcached commands"
+description "Memcached commands"
+hide_legend false
+
+field :set,    :color => "green",
+               :alias => "set",
+               :data  => "#{node}.memcached.memcached_command.set"
+
+field :get,    :color => "blue",
+               :alias => "get",
+               :data  => "#{node}.memcached.memcached_command.get"
+

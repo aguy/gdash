@@ -1,0 +1,10 @@
+node = @properties[:node]
+
+title       "Memcached connections"
+description "Memcached connections"
+hide_legend false
+
+field :connections,    :color => "red",
+               :alias => "hitratio",
+               :data  => "#{node}.memcached.memcached_connections.current"
+
