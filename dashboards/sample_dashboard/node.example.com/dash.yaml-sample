@@ -1,0 +1,13 @@
+---
+:name:        node.example.com
+:description: 
+
+:graph_properties:
+  :node: servers.com.example.node
+
+:include_graphs:
+    - node_templates/apps.apache
+    - node_templates/apps.java
+    - node_templates/os.base
+    - node_templates/apps.tomcat
+
