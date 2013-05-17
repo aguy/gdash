@@ -1,0 +1,11 @@
+node = @properties[:node]
+
+title       "Twemproxy server requests"
+description "Twemproxy server requests"
+hide_legend false
+
+field :server,  :data  => "#{node}.twemproxy.counter.*_requests",
+               :alias_sub_search => '.*\.(\w+)_requests',
+               :alias_sub_replace => '\1 requests',
+               :cacti_style => true
+
