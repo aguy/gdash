@@ -6,6 +6,5 @@ hide_legend false
 
 field :server,  :data  => "#{node}.twemproxy.gauge.*_connections",
                :alias_sub_search => '.*\.(\w+)_connections',
-               :alias_sub_replace => '\1 connections',
-               :cacti_style => true
+               :alias_sub_replace => '\1 connections'
 
